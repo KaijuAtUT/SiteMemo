@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "サイト別メモ拡張",
+    "version": "1.0",
+    "description": "特定のサイトごとにメモを保存・表示する拡張機能",
+    "permissions": [
+      "storage",
+      "contextMenus",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
+  }
